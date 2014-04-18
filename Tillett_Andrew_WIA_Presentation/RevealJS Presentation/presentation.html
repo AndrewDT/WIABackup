@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>KineticJS Presentation</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/styles/sunburst.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+                <!--<section> go here-->
+        		
+                <section>
+                    <h1>A Look into KineticJS</h1>
+                    <h2>Andrew Tillett</h2>
+                
+                
+                </section>
+                
+                <section>
+                
+                    <h2>What is KineticJS?</h2>
+                    <p>KineticJS is an HTML5 Canvas JavaScript framework that enables high performance animations, transitions, node nesting, layering, filtering, caching, event handling for desktop and mobile applications, and much more</p>
+                </section>
+                
+                    
+                    
+                <section>
+                    <section>
+                        <h2>Project Overview</h2>
+                    </section>
+                    <section>
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Object Grouping</li>
+                            <li>Object Layering</li>
+                            <li>Object Rotation</li>
+                            <li>Draggable Stage</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Uses</h3>
+                        <ul>
+                            <li>Kinetic Stage</li>
+                            <li>Kinetic Layer</li>
+                            <li>Kinetic Group</li>
+                            <li>Kinetic Circle</li>
+                            <li>Kinetic Rectangle</li>
+                            <li>Kinetic Shape</li>
+                            <li>Kinetic Image</li>
+                            <li>Kinetic Animation</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Let's take a look!</h3>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Getting Started</h2>
+                        <p>First, the framework needs to be downloaded, which can be done at <a href="http://kineticjs.com/">http://kineticjs.com/</a></p>
+                    </section>
+                    <section>
+                        <h3>Script and Container</h3>
+                        <p>Here is an example script tag. The "defer" is a necessary part of using KineticJS</p>
+                        <img src="images/scriptExample.png">
+                        <p>KineticJS expects a div for the stage container, then creates the canvas elements inside that div</p>
+                        <img src="images/containerExample.png">
+                    </section>
+                    <section>
+                        <h3>Create the Stage, Layer, and Group</h3>
+                        <p>var stage = new Kinetic.Stage()</p>
+                        <p>var layer = new Kinetic.Layer()</p>
+                        <p>var group = new Kinetic.Group()</p>
+                        <img src="images/stageLayerGroup.png">
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h2>Create Kinetic Shapes and Images</h2>
+                        <p>Creating a Kinetic shape is similar to creating an object and its properties</p>
+                        <p>There are many optional properties and for a full list visit
+                        <a href="http://kineticjs.com/docs/index.html">http://kineticjs.com/docs/index.html</a>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Kinetic.Circle</h3>
+                        <p>var circle = new Kinetic.Circle({})</p>
+                        <p>List of Required properties</p>
+                        <ul>
+                            <li>x</li>
+                            <li>y</li>
+                            <li>radius</li>
+                            <li>fill/stroke - requires one</li>
+                        </ul>
+                        <br>
+                        <img src="images/kineticCircle.png">
+                    </section>
+                    <section>
+                        <h3>Kinetic.Rect</h3>
+                        <p>var rectangle = new Kinetic.Rect({})</p>
+                        <p>List of Required properties</p>
+                        <ul>
+                            <li>x</li>
+                            <li>y</li>
+                            <li>height/width</li>
+                            <li>fill/stroke - requires one</li>
+                        </ul>
+                        <br>
+                        <img src="images/kineticRect.png">
+                    </section>
+                    <section>
+                        <h3>Kinetic.Shape</h3>
+                        <p>var shape = new Kinetic.Shape({})</p>
+                        <p>List of Required properties</p>
+                        <ul>
+                            <li>x</li>
+                            <li>y</li>
+                            <li>fill/stroke - requires one</li>
+                            <li>drawFunc</li>
+                        </ul>
+                        <br>
+                        <p>The drawFunc function is similar to using typical HTML5 Canvas</p>
+                        <img src="images/kineticShape.png">
+                    </section>
+                    <section>
+                        <h3>Kinetic.Image</h3>
+                        <p>var imageObj = new Image();</p>
+                        <p>imageObj.src = "";</p>
+                        <p>var image = new Kinetic.Image({})</p>
+                        <p>List of Required properties</p>
+                        <ul>
+                            <li>x</li>
+                            <li>y</li>
+                            <li>height/width</li>
+                            <li>image (source object)</li>
+                        </ul>
+                        <br>
+                        <img src="images/kineticImage.png">
+                    </section>
+                    <section>
+                        <h3>Appearing on Page</h3>
+                        <p>Now we simply add each group to its corresponding layer, and then each layer to the stage</p>
+                        <br>
+                        <img src="images/displayStage.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Animations with KineticJS</h2>
+                    </section>
+                    <section>
+                        <h3>Kinetic.Animation</h3>
+                        <p>Takes two arguments, a required update function and an optional layer, or array of layers, that will be updated with each animation frame.  The animation function is passed a frame object which contains these properties:</p>
+                        <ul>
+                            <li>time - number of milliseconds that the animation has been running</li>
+                            <li>timeDiff - number of milliseconds that have passed since the last frame</li>
+                            <li>frameRate - current frame rate in frames per second.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Kinetic.Animation Continued</h3>
+                        <p>The update function should never redraw the stage or a layer because the animation engine will intelligently handle that for us. Once created, we utilize the Start() method to begin the animation.</p>
+                        <br>
+                        <img src="images/kineticAnimation.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Controlling KineticJS Layers</h2>
+                        <p>Kinetic Layers have a number of methods that allow you to control them in familiar ways</p>
+                        <p>For a complete list of methods visit <a href="http://kineticjs.com/docs/Kinetic.Layer.html">http://kineticjs.com/docs/Kinetic.Layer.html</a></p>
+                    </section>
+                    <section>
+                        <h3>Controlling KineticJS Layers Continued</h3>
+                        <p>Here we use two click events, one to move the “layer” layer to top with the moveToTop() method and another to move it back to bottom with the moveToBottom() method then redraw the layer each time</p>
+                        <br>
+                        <img src="images/kineticLayerControl.png">
+                    </section>
+                </section>
+                <section>
+                    <h2>KineticJS Dragging</h2>
+                    <p>Dragging is easy in KineticJS. All we have to do in this instance is set the setDraggable() method on the stage to true and its done!</p>
+                    <br>
+                    <img src="images/kineticDraggable.png">
+                </section>
+                <section>
+                    <section>
+                        <h2>Check Out the Code</h2>
+                    </section>
+                    <section>
+                        <h2>index.html</h2>                      
+                        <pre>
+                        <code>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;title&gt;KineticJS Project&lt;/title&gt;
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;js/kinetic-v5.1.0.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script defer=&quot;defer&quot; type=&quot;text/javascript&quot; src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Fun with KineticJS!&lt;/h1&gt;
+    &lt;div id=&quot;contentBackground&quot;&gt;
+        &lt;div id=&quot;container&quot;&gt;
+        &lt;/div&gt;
+        Single letters in &lt;aside&gt; are a downloaded character font for button labels
+        &lt;ul id=&quot;buttonControls&quot;&gt;
+            &lt;li&gt;&lt;button type=&quot;button&quot; id=&quot;moveToTop&quot;&gt;Blue Hero to Top&lt;aside&gt;L&lt;/aside&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;button type=&quot;button&quot; id=&quot;moveToBottom&quot;&gt;Blue Hero to Bottom&lt;aside&gt;T&lt;/aside&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;button type=&quot;button&quot; id=&quot;startAnimation&quot;&gt;Make the Heroes Fly!&lt;aside&gt;W&lt;/aside&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;button type=&quot;button&quot; id=&quot;stopAnimation&quot;&gt;Make the Heroes Stop!&lt;aside&gt;E&lt;/aside&gt;&lt;/button&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <h2>main.js</h2>                      
+                        <pre>
+                        <code>
+//Creating a stage variable to hold the new Kinetic Stage
+var stage = new Kinetic.Stage({
+    container: &quot;container&quot;, //ID of our container div from index.html
+    width: 578, //Width of our CANVAS inside the div
+    height: 500 //Height of our CANVAS inside the div
+});
+
+//Creating a variable to hold the new Kinetic Layers
+var layer = new Kinetic.Layer();
+var layer2 = new Kinetic.Layer();
+
+//Creating a variable to hold a new Kinetic Groups
+var group = new Kinetic.Group({
+    x: 289,
+    y: 220
+});
+
+var group2 = new Kinetic.Group({
+    x: 313,
+    y: 220
+});
+
+var head = new Kinetic.Circle({
+    x: 291,
+    y: 153,
+    radius: 10,
+    offset: {x:100, y:100},
+    fill: 'white',
+    stroke: 'black',
+    strokeWidth: 4
+});
+
+var head2 = new Kinetic.Circle({
+    x: 291,
+    y: 153,
+    radius: 10,
+    offset: {x:100, y:100},
+    fill: 'white',
+    stroke: 'black',
+    strokeWidth: 4
+});
+
+var body = new Kinetic.Rect({
+    x: 265,
+    y: 120,
+    height: 30,
+    width: 15,
+    offset: {x:100, y:100},
+    fill: &quot;blue&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+var body2 = new Kinetic.Rect({
+    x: 265,
+    y: 120,
+    height: 30,
+    width: 15,
+    offset: {x:100, y:100},
+    fill: &quot;red&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+
+var arms = new Kinetic.Rect({
+    x: 270,
+    y: 153,
+    height: 15,
+    width: 8,
+    offset: {x:100, y:100},
+    fill: &quot;blue&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+
+var arms2 = new Kinetic.Rect({
+    x: 270,
+    y: 153,
+    height: 15,
+    width: 8,
+    offset: {x:100, y:100},
+    fill: &quot;red&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+var legs = new Kinetic.Rect({
+    x: 268,
+    y: 105,
+    height: 30,
+    width: 8,
+    offset: {x:100, y:100},
+    fill: &quot;green&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+
+var legs2 = new Kinetic.Rect({
+    x: 268,
+    y: 105,
+    height: 30,
+    width: 8,
+    offset: {x:100, y:100},
+    fill: &quot;yellow&quot;,
+    stroke: &quot;black&quot;,
+    strokeWidth: 4,
+    cornerRadius:5
+});
+
+
+var cape = new Kinetic.Shape({
+    //The drawFunc function is similar to what we've learned this month
+    // a Kinetic.Canvas renderer is passed into the drawFunc function
+    drawFunc: function(context) {
+      context.beginPath();
+      context.lineTo(190, 20);
+      context.quadraticCurveTo(160, 30, 190, 50);
+      context.closePath();
+      // KineticJS specific context method
+      context.fillStrokeShape(this);
+},
+    fill: 'green',
+    stroke: 'black',
+    strokeWidth: 4
+});
+
+
+
+var cape2 = new Kinetic.Shape({
+    drawFunc: function(context) {
+      context.beginPath();
+      context.lineTo(190, 20);
+      context.quadraticCurveTo(160, 30, 190, 50);
+      context.closePath();
+      // KineticJS specific context method
+      context.fillStrokeShape(this);
+},
+    fill: 'yellow',
+    stroke: 'black',
+    strokeWidth: 4
+});
+
+var imageObj = new Image(); //new image instantiation
+imageObj.src = 'images/earth.png'; //source of new image
+imageObj.onload = function() { //function to draw the Kinetic Image
+    var earth = new Kinetic.Image({
+      x: 165,
+      y: 90,
+      image: imageObj,
+      width: 250,
+      height: 262
+    });
+    layer.add(earth); //Adding earth to &quot;layer&quot; layer
+    layer.batchDraw(); //Method that automatically hooks redraws into the KineticJS animation engine
+};
+
+//Adding shapes to the &quot;group&quot; group
+group.add(cape);
+group.add(legs);
+group.add(arms);
+group.add(body);
+group.add(head);
+
+//Adding shapes to the &quot;group2&quot; group
+group2.add(cape2);
+group2.add(legs2);
+group2.add(arms2);
+group2.add(body2);
+group2.add(head2);
+
+//adding the groups to their respective layers
+layer.add(group);
+layer2.add(group2);
+
+//adding the layers to the stage
+stage.add(layer);
+stage.add(layer2);
+
+
+//Click Event to start rotation animation
+document.getElementById(&quot;startAnimation&quot;).addEventListener(&quot;click&quot;, function(){    
+    //Making the groups rotate a complete circle every 4 seconds then passing stage to be redrawn
+    var angularSpeed = 360 / 4;
+    var anim = new Kinetic.Animation(function(frame) {
+      var angleDiff = frame.timeDiff * angularSpeed / 1000;
+      group.rotate(angleDiff);
+      group2.rotate(angleDiff);
+    }, stage);
+
+    anim.start();
+    
+    //Click event to stop rotation animation
+    document.getElementById(&quot;stopAnimation&quot;).addEventListener(&quot;click&quot;, function(){
+    anim.stop();
+    });
+});
+
+
+document.getElementById(&quot;moveToTop&quot;).addEventListener(&quot;click&quot;, function(){
+    layer.moveToTop();
+    layer.draw();
+}, false);
+
+document.getElementById(&quot;moveToBottom&quot;).addEventListener(&quot;click&quot;, function(){
+    layer.moveToBottom();
+    layer.draw();
+}, false);
+
+
+stage.setDraggable(&quot;true&quot;);
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <h2>main.css</h2>                      
+                        <pre>
+                        <code>
+body{
+    font-family: &quot;Helvetica&quot;;
+    background: url(../images/bgtexture3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+}
+
+h1{
+    background-color: rgba(0,225,0,.6);
+    width: 100%;
+    text-align: center;
+    border: 2px solid;
+}
+
+#contentBackground{
+    margin: -22px 0 0 0;
+    background-color: rgba(225, 225,225, .2);
+    height: 550px;
+    width: 100%;
+    border: 1px solid;
+    overflow: hidden;
+}
+
+#container{
+    margin: 20px 0 0 150px;
+    border: 2px solid;
+    width: 578px;
+    height: 500px;
+    float: left;
+    background-color: rgba(0,0,0, .2);
+    border-radius: 5px;
+}
+
+
+#buttonControls{
+    margin: 10px 0 0 0;
+    float: right;
+    list-style-type: none;
+    width: 600px;
+}
+
+#buttonControls li{
+    margin: 65px 0 0 0;
+}
+
+#buttonControls button{
+    background: #ff3019; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+    width: 200px;
+    height: 50px;
+    font-family: &quot;Helvetica&quot;;
+    font-weight: bold;
+    font-size: 10pt;
+    border: 2px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 1px rgba(0,0,0,.4);
+    outline-style: none;
+}
+
+#buttonControls button:active{
+    background: #ff5d4f; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff5d4f 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5d4f), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ff5d4f 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ff5d4f 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ff5d4f 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ff5d4f 0%,#cf0404 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5d4f', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+}
+
+#buttonControls aside{
+    display: inline;
+    margin: 0 0 0 15px;
+    font-family: &quot;HeRoez&quot;;
+    font-size: 14pt;
+}
+
+</code>
+</pre>
+                    </section>
+                </section>
+                
+                
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
